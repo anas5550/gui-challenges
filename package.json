@@ -1,0 +1,12 @@
+{
+  "name": "gui-challenges",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MyEvolution-as-a-Front-end/gui-challenges.git",
+  "author": "JohnAnon9771 <njoao97710@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "blingblingjs": "^2.1.1",
+    "roving-ux": "^1.0.2"
+  }
+}
