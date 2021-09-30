@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+
+  min-height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  font-family: system-ui;
+}
+
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+@custom-media --dark (prefers-color-scheme: dark);
+@custom-media --light (prefers-color-scheme: light);
+
+.split-button {
+  $background: hsl(220, 75%, 50%);
+  $background-hover: hsl(220, 75%, 45%);
+  $background-active: hsl(220, 75%, 40%);
+  $background-list: hsl(0, 0%, 100%);
+
+  $foreground: hsl(220, 82%, 98%);
+  $foreground-list: hsl(220, 75%, 25%);
+  $foreground-shadow: hsl(220, 75%, 40%);
+  $foreground-list-hover: hsl(220, 82%, 98%);
+
+  $border: 6px;
+  $radius: 6px;
+  $in-speed: 50ms;
+  $out-speed: 300ms;
+
+  @media (--dark) {
+  }
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border-radius: $border;
+
+  background-color: $background;
+  color: $foreground;
+
+  width: 130px;
+  height: 44px;
+
+  user-select: none;
+
+  > button {
+    flex: 2;
+
+    height: 100%;
+
+    background: none;
+    border: none;
+
+    color: $foreground;
+    font-weight: 700;
+    text-shadow: $foreground-shadow 0 1px 0;
+
+    border-right: 1px solid $foreground;
+
+    outline-color: $foreground;
+    outline-offset: -5px;
+
+    border-radius: $border 0 0 $border;
+
+    & > svg {
+      fill: none;
+      stroke: var(--ontheme);
+    }
+
+    &:is(:hover, :focus-visible) {
+      background-color: $background-hover;
+
+      & > svg {
+        stroke: currentColor;
+        fill: none;
+      }
+    }
+
+    &:active {
+      background-color: $background-active;
+    }
+  }
+
+  .split-popup {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    height: 100%;
+
+    &:hover {
+      background-color: $background-hover;
+      border-radius: 0 $border $border 0;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .popup {
+      display: grid;
+      align-content: center;
+
+      position: absolute;
+      top: -120px;
+      left: 70px;
+
+      background-color: $background-list;
+
+      border-radius: $radius;
+      padding: 0;
+      margin: 0;
+
+      width: 195px;
+      height: 135px;
+
+      box-shadow: 0 -2px 5px 0 rgba(10, 29, 67, 0.1),
+        0 1px 1px -2px rgba(11, 29, 65, 0.1),
+        0 2px 2px -2px rgba(11, 29, 65, 0.1),
+        0 5px 5px -2px rgba(11, 29, 65, 0.1),
+        0 9px 9px -2px rgba(11, 29, 65, 0.1),
+        0 16px 16px -2px rgba(11, 29, 65, 0.1);
+
+      li {
+        height: 42px;
+
+        button {
+          display: inline-flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 9.35859px;
+
+          background: none;
+          border: none;
+
+          width: 100%;
+          height: 100%;
+
+          color: $foreground-list;
+
+          padding: 11.6982px 23.3965px;
+
+          &:hover {
+            background-color: $background-hover;
+            color: $foreground-list-hover;
+          }
+
+          svg {
+            stroke: currentColor;
+            fill: none;
+          }
+
+          span {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

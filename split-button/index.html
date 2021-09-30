@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split button</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="./script.js" async></script>
+  </head>
+  <body>
+    <div class="split-button">
+      <button>View Cart</button>
+      <span
+        class="split-popup"
+        tabindex="-1"
+        aria-haspopup="true"
+        aria-expanded="false"
+        title="Open for more actions"
+      >
+        <i data-feather="chevron-down"></i>
+        <ul class="popup">
+          <li>
+            <button>
+              <i data-feather="shopping-cart"></i>
+              <span>Checkout</span>
+            </button>
+          </li>
+          <li>
+            <button>
+              <i data-feather="credit-card"></i>
+              <span>Quick Pay</span>
+            </button>
+          </li>
+          <li>
+            <button>
+              <i data-feather="bookmark"></i>
+              <span>Save for later</span>
+            </button>
+          </li>
+        </ul>
+      </span>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

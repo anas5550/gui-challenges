@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  font-family: system-ui;
+}
+
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+@custom-media --dark (prefers-color-scheme: dark);
+@custom-media --light (prefers-color-scheme: light);
+.split-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-radius: 6px;
+  background-color: #2060df;
+  color: #f6f9fe;
+  width: 130px;
+  height: 44px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.split-button > button {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 100%;
+  background: none;
+  border: none;
+  color: #f6f9fe;
+  font-weight: 700;
+  text-shadow: #1a4db3 0 1px 0;
+  border-right: 1px solid #f6f9fe;
+  outline-color: #f6f9fe;
+  outline-offset: -5px;
+  border-radius: 6px 0 0 6px;
+}
+
+.split-button > button > svg {
+  fill: none;
+  stroke: var(--ontheme);
+}
+
+.split-button > button:is(:hover, :focus-visible) {
+  background-color: #1d56c9;
+}
+
+.split-button > button:is(:hover, :focus-visible) > svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+.split-button > button:active {
+  background-color: #1a4db3;
+}
+
+.split-button .split-popup {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+}
+
+.split-button .split-popup:hover {
+  background-color: #1d56c9;
+  border-radius: 0 6px 6px 0;
+}
+
+.split-button .split-popup svg {
+  width: 20px;
+  height: 20px;
+}
+
+.split-button .split-popup .popup {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  position: absolute;
+  top: -120px;
+  left: 70px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0;
+  width: 195px;
+  height: 135px;
+  -webkit-box-shadow: 0 -2px 5px 0 rgba(10, 29, 67, 0.1), 0 1px 1px -2px rgba(11, 29, 65, 0.1), 0 2px 2px -2px rgba(11, 29, 65, 0.1), 0 5px 5px -2px rgba(11, 29, 65, 0.1), 0 9px 9px -2px rgba(11, 29, 65, 0.1), 0 16px 16px -2px rgba(11, 29, 65, 0.1);
+          box-shadow: 0 -2px 5px 0 rgba(10, 29, 67, 0.1), 0 1px 1px -2px rgba(11, 29, 65, 0.1), 0 2px 2px -2px rgba(11, 29, 65, 0.1), 0 5px 5px -2px rgba(11, 29, 65, 0.1), 0 9px 9px -2px rgba(11, 29, 65, 0.1), 0 16px 16px -2px rgba(11, 29, 65, 0.1);
+}
+
+.split-button .split-popup .popup li {
+  height: 42px;
+}
+
+.split-button .split-popup .popup li button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9.35859px;
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  color: #103070;
+  padding: 11.6982px 23.3965px;
+}
+
+.split-button .split-popup .popup li button:hover {
+  background-color: #1d56c9;
+  color: #f6f9fe;
+}
+
+.split-button .split-popup .popup li button svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+.split-button .split-popup .popup li button span {
+  font-size: 14px;
+  font-weight: 500;
+}
+/*# sourceMappingURL=style.css.map */
